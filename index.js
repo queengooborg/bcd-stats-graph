@@ -86,8 +86,10 @@ function generateGraph(valueType) {
 	for (let browser in data) {
 		barData.push(data[browser]);
 	}
+	
+	var graphLayout = {barmode: "stack"};
 
-	var graphOptions = {layout: {barmode: "stack"}, filename: `mdn-bcd-${valueType}`, fileopt: "overwrite"};
+	var graphOptions = {layout: graphLayout, filename: `mdn-bcd-${valueType}`, fileopt: "overwrite"};
 	plotly.plot(barData, graphOptions, function(err, msg) {
 		console.log(msg);
 	});
