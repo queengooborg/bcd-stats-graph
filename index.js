@@ -98,6 +98,7 @@ function generateGraph(valueType) {
 
 	var graphOptions = {layout: graphLayout, filename: `mdn-bcd-${valueType}`, fileopt: "overwrite"};
 	plotly.plot(barData, graphOptions, function(err, msg) {
+		if (err) console.error(msg);
 		console.log(`${valueType}: ${msg.url}`);
 	});
 };
