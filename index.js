@@ -1,6 +1,8 @@
 'use strict';
+require('dotenv').config();
+
 var fs = require('fs');
-var plotly = require('plotly')("vinyldarkscratch", "37qvfgEI8WM4XjprBLJF");
+var plotly = require('plotly')(process.env.PLOTLY_USERNAME, process.env.PLOTLY_APIKEY);
 const bcd = require('mdn-browser-compat-data');
 
 const stats_data = require("./bcd-stats.json");
