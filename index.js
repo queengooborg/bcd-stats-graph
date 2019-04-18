@@ -86,8 +86,13 @@ function generateGraph(valueType) {
 	for (let browser in data) {
 		barData.push(data[browser]);
 	}
-	
-	var graphLayout = {barmode: "stack"};
+
+	var graphLayout = {
+		title: `MDN BCD: ${valueType} values`,
+		xaxis: {title: "BCD Version"},
+		yaxis: {title: "Number of Entries"},
+		barmode: "stack"
+	};
 
 	var graphOptions = {layout: graphLayout, filename: `mdn-bcd-${valueType}`, fileopt: "overwrite"};
 	plotly.plot(barData, graphOptions, function(err, msg) {
