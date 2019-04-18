@@ -1,0 +1,16 @@
+{
+  "name": "bcd-stats-graph",
+  "version": "1.0.0",
+  "description": "Generate a graph of the real value statistics of mdn/browser-compat-data",
+  "main": "index.js",
+  "dependencies": {
+    "mdn-browser-compat-data": "0.0.76",
+    "plotly": "^1.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vinyl Darkscratch [https://www.queengoob.org]",
+  "license": "CC0-1.0"
+}
