@@ -74,13 +74,14 @@ function generateGraph(valueType) {
 
 	var data = {};
 	browsers.forEach(browser => {
-		data[browser] = {x: [], y: [], name: browser, type: "bar"};
+		data[browser] = {x: [], y: [], text: [], name: browser, type: "bar"};
 	});
 
 	for (let version in stats_data) {
 		for (let browser in stats_data[version]) {
 			data[browser]['x'].push(version);
 			data[browser]['y'].push(stats_data[version][browser][valueType]);
+			data[browser]['text'].push(`${browser}: ${((stats_data[version][browser][valueType]/stats_data[version][browser]['all']) * 100).toFixed(2)}% of total`)
 		};
 	};
 
