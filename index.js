@@ -10,9 +10,9 @@ const stats_data = require("./bcd-stats.json");
 const browsers = ['chrome', 'chrome_android', 'edge', 'firefox', 'ie', 'safari', 'safari_ios', 'webview_android'];
 
 function getNewStats() {
-	let stats = {};
+	let stats = { all: 0 };
 	browsers.forEach(browser => {
-		stats[browser] = { all: 0, true: 0, null: 0, real: 0 }
+		stats[browser] = { true: 0, null: 0, real: 0 }
 	});
 
 	const checkSupport = (supportData, type) => {
@@ -24,8 +24,8 @@ function getNewStats() {
 
 	const processData = (data) => {
 		if (data.support) {
+			stats.all++;
 			browsers.forEach(function(browser) {
-				stats[browser].all++;
 				let real_value = true;
 				if (!data.support[browser]) {
 					stats[browser].null++;
