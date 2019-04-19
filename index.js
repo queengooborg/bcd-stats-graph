@@ -82,7 +82,7 @@ function generateGraph(valueType) {
 			if (browser !== 'all') {
 				data[browser]['x'].push(version);
 				data[browser]['y'].push(((stats_data[version][browser][valueType]/stats_data[version].all) * 100).toFixed(2));
-				data[browser]['text'].push(`${browser}: ${stats_data[version][browser][valueType]}/${stats_data[version].all}`);
+				data[browser]['text'].push(`${stats_data[version][browser][valueType]}/${stats_data[version].all} entries`);
 			}
 		};
 	};
@@ -95,7 +95,7 @@ function generateGraph(valueType) {
 	var graphLayout = {
 		title: `MDN BCD: ${valueType} values`,
 		xaxis: {title: "BCD Version"},
-		yaxis: {title: "Number of Entries"},
+		yaxis: {title: "% of Entries"},
 		barmode: "stack"
 	};
 
