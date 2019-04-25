@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "dotenv": "^7.0.0",
-    "mdn-browser-compat-data": "0.0.76",
+    "mdn-browser-compat-data": ">=0.0.8",
     "plotly": "^1.0.6"
   },
   "devDependencies": {},
