@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd "$(dirname "$0")"
+
 npm update
 node index.js
 git add bcd-stats.json
