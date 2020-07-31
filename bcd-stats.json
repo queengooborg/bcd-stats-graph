@@ -5373,5 +5373,48 @@
       "null": 619,
       "real": 7231
     }
+  },
+  "1.0.33": {
+    "all": 10875,
+    "chrome": {
+      "true": 1966,
+      "null": 600,
+      "real": 8309
+    },
+    "chrome_android": {
+      "true": 2568,
+      "null": 657,
+      "real": 7650
+    },
+    "edge": {
+      "true": 2,
+      "null": 539,
+      "real": 10334
+    },
+    "firefox": {
+      "true": 1448,
+      "null": 841,
+      "real": 8586
+    },
+    "ie": {
+      "true": 1121,
+      "null": 1815,
+      "real": 7939
+    },
+    "safari": {
+      "true": 1906,
+      "null": 2005,
+      "real": 6965
+    },
+    "safari_ios": {
+      "true": 2212,
+      "null": 2224,
+      "real": 6441
+    },
+    "webview_android": {
+      "true": 3013,
+      "null": 620,
+      "real": 7242
+    }
   }
 }
