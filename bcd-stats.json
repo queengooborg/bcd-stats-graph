@@ -5674,5 +5674,349 @@
       "null": 614,
       "real": 7358
     }
+  },
+  "2.0.0": {
+    "all": 10939,
+    "chrome": {
+      "true": 1933,
+      "null": 593,
+      "real": 8413
+    },
+    "chrome_android": {
+      "true": 2527,
+      "null": 649,
+      "real": 7763
+    },
+    "edge": {
+      "true": 2,
+      "null": 534,
+      "real": 10403
+    },
+    "firefox": {
+      "true": 1432,
+      "null": 783,
+      "real": 8724
+    },
+    "ie": {
+      "true": 1123,
+      "null": 1307,
+      "real": 8509
+    },
+    "safari": {
+      "true": 1871,
+      "null": 1900,
+      "real": 7169
+    },
+    "safari_ios": {
+      "true": 2182,
+      "null": 2112,
+      "real": 6647
+    },
+    "webview_android": {
+      "true": 2967,
+      "null": 614,
+      "real": 7358
+    }
+  },
+  "2.0.1": {
+    "all": 10939,
+    "chrome": {
+      "true": 1933,
+      "null": 593,
+      "real": 8413
+    },
+    "chrome_android": {
+      "true": 2527,
+      "null": 649,
+      "real": 7763
+    },
+    "edge": {
+      "true": 2,
+      "null": 534,
+      "real": 10403
+    },
+    "firefox": {
+      "true": 1432,
+      "null": 780,
+      "real": 8727
+    },
+    "ie": {
+      "true": 1123,
+      "null": 1307,
+      "real": 8509
+    },
+    "safari": {
+      "true": 1871,
+      "null": 1898,
+      "real": 7171
+    },
+    "safari_ios": {
+      "true": 2169,
+      "null": 2110,
+      "real": 6662
+    },
+    "webview_android": {
+      "true": 2967,
+      "null": 614,
+      "real": 7358
+    }
+  },
+  "2.0.2": {
+    "all": 10940,
+    "chrome": {
+      "true": 1895,
+      "null": 593,
+      "real": 8452
+    },
+    "chrome_android": {
+      "true": 2488,
+      "null": 649,
+      "real": 7803
+    },
+    "edge": {
+      "true": 2,
+      "null": 533,
+      "real": 10405
+    },
+    "firefox": {
+      "true": 1328,
+      "null": 778,
+      "real": 8834
+    },
+    "ie": {
+      "true": 1092,
+      "null": 1260,
+      "real": 8588
+    },
+    "safari": {
+      "true": 1778,
+      "null": 1847,
+      "real": 7315
+    },
+    "safari_ios": {
+      "true": 2073,
+      "null": 2060,
+      "real": 6807
+    },
+    "webview_android": {
+      "true": 2924,
+      "null": 613,
+      "real": 7403
+    }
+  },
+  "2.0.3": {
+    "all": 10941,
+    "chrome": {
+      "true": 1870,
+      "null": 593,
+      "real": 8478
+    },
+    "chrome_android": {
+      "true": 2424,
+      "null": 649,
+      "real": 7868
+    },
+    "edge": {
+      "true": 2,
+      "null": 533,
+      "real": 10406
+    },
+    "firefox": {
+      "true": 1323,
+      "null": 776,
+      "real": 8842
+    },
+    "ie": {
+      "true": 1092,
+      "null": 1255,
+      "real": 8594
+    },
+    "safari": {
+      "true": 1772,
+      "null": 1832,
+      "real": 7337
+    },
+    "safari_ios": {
+      "true": 2065,
+      "null": 2045,
+      "real": 6831
+    },
+    "webview_android": {
+      "true": 2861,
+      "null": 613,
+      "real": 7467
+    }
+  },
+  "2.0.4": {
+    "all": 10961,
+    "chrome": {
+      "true": 1661,
+      "null": 592,
+      "real": 8708
+    },
+    "chrome_android": {
+      "true": 2234,
+      "null": 620,
+      "real": 8107
+    },
+    "edge": {
+      "true": 2,
+      "null": 532,
+      "real": 10427
+    },
+    "firefox": {
+      "true": 1313,
+      "null": 775,
+      "real": 8873
+    },
+    "ie": {
+      "true": 1082,
+      "null": 1242,
+      "real": 8637
+    },
+    "safari": {
+      "true": 1746,
+      "null": 1756,
+      "real": 7459
+    },
+    "safari_ios": {
+      "true": 2028,
+      "null": 1962,
+      "real": 6971
+    },
+    "webview_android": {
+      "true": 2628,
+      "null": 609,
+      "real": 7724
+    }
+  },
+  "2.0.5": {
+    "all": 10959,
+    "chrome": {
+      "true": 1428,
+      "null": 582,
+      "real": 8949
+    },
+    "chrome_android": {
+      "true": 1980,
+      "null": 605,
+      "real": 8374
+    },
+    "edge": {
+      "true": 2,
+      "null": 527,
+      "real": 10430
+    },
+    "firefox": {
+      "true": 1299,
+      "null": 773,
+      "real": 8887
+    },
+    "ie": {
+      "true": 827,
+      "null": 1152,
+      "real": 8980
+    },
+    "safari": {
+      "true": 1401,
+      "null": 1628,
+      "real": 7930
+    },
+    "safari_ios": {
+      "true": 1682,
+      "null": 1815,
+      "real": 7462
+    },
+    "webview_android": {
+      "true": 2393,
+      "null": 595,
+      "real": 7971
+    }
+  },
+  "2.0.6": {
+    "all": 10941,
+    "chrome": {
+      "true": 1422,
+      "null": 582,
+      "real": 8937
+    },
+    "chrome_android": {
+      "true": 1974,
+      "null": 603,
+      "real": 8364
+    },
+    "edge": {
+      "true": 2,
+      "null": 525,
+      "real": 10414
+    },
+    "firefox": {
+      "true": 1159,
+      "null": 754,
+      "real": 9028
+    },
+    "ie": {
+      "true": 821,
+      "null": 1151,
+      "real": 8969
+    },
+    "safari": {
+      "true": 1339,
+      "null": 1543,
+      "real": 8059
+    },
+    "safari_ios": {
+      "true": 1508,
+      "null": 1726,
+      "real": 7707
+    },
+    "webview_android": {
+      "true": 2387,
+      "null": 595,
+      "real": 7959
+    }
+  },
+  "2.0.7": {
+    "all": 10940,
+    "chrome": {
+      "true": 1423,
+      "null": 581,
+      "real": 8936
+    },
+    "chrome_android": {
+      "true": 1975,
+      "null": 602,
+      "real": 8363
+    },
+    "edge": {
+      "true": 3,
+      "null": 524,
+      "real": 10413
+    },
+    "firefox": {
+      "true": 1160,
+      "null": 754,
+      "real": 9026
+    },
+    "ie": {
+      "true": 822,
+      "null": 1150,
+      "real": 8968
+    },
+    "safari": {
+      "true": 1157,
+      "null": 1423,
+      "real": 8360
+    },
+    "safari_ios": {
+      "true": 1330,
+      "null": 1594,
+      "real": 8016
+    },
+    "webview_android": {
+      "true": 2388,
+      "null": 594,
+      "real": 7958
+    }
   }
 }

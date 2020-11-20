@@ -3,7 +3,7 @@ require('dotenv').config();
 
 var fs = require('fs');
 var plotly = require('plotly')(process.env.PLOTLY_USERNAME, process.env.PLOTLY_APIKEY);
-const bcd = require('mdn-browser-compat-data');
+const bcd = require('@mdn/browser-compat-data');
 
 const stats_data = require("./bcd-stats.json");
 
@@ -63,7 +63,7 @@ function getNewStats() {
 		}
 	}
 
-	stats_data[require('./node_modules/mdn-browser-compat-data/package.json').version] = stats;
+	stats_data[require(require.resolve('@mdn/browser-compat-data/package.json')).version] = stats;
 }
 
 function generateGraph(valueType) {
