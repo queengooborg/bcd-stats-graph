@@ -2,16 +2,20 @@
 
 var fs = require('fs');
 const bcd = require('@mdn/browser-compat-data');
+const bcdversion = require(require.resolve('@mdn/browser-compat-data/package.json')).version;
 
-const stats_data = require("./bcd-stats.json");
+const stats = require("./bcd-stats.json");
 
 const browsers = ['chrome', 'chrome_android', 'edge', 'firefox', 'ie', 'safari', 'safari_ios', 'webview_android'];
 
-function getNewStats() {
-	let stats = { all: 0 };
-	browsers.forEach(browser => {
-		stats[browser] = { true: 0, null: 0, real: 0 }
-	});
+const getNewStats = () => {
+	// Reset stats
+	stats.all[bcdversion] = 0;
+	for (const browser of browsers) {
+		stats[browser].true[bcdversion] = 0;
+		stats[browser].null[bcdversion] = 0;
+		stats[browser].real[bcdversion] = 0;
+	}
 
 	const checkSupport = (supportData, type) => {
 		if (!Array.isArray(supportData)) {
@@ -22,24 +26,24 @@ function getNewStats() {
 
 	const processData = (data) => {
 		if (data.support) {
-			stats.all++;
+			stats.all[bcdversion]++;
 			browsers.forEach(function(browser) {
 				let real_value = true;
 				if (!data.support[browser]) {
-					stats[browser].null++;
+					stats[browser].null[bcdversion]++;
 					real_value = false;
 				} else {
 					if (checkSupport(data.support[browser], null)) {
-						stats[browser].null++;
+						stats[browser].null[bcdversion]++;
 						real_value = false;
 					}
 					if (checkSupport(data.support[browser], true)) {
-						stats[browser].true++;
+						stats[browser].true[bcdversion]++;
 						real_value = false;
 					}
 				}
 				if (real_value) {
-					stats[browser].real++;
+					stats[browser].real[bcdversion]++;
 				}
 			});
 		}
@@ -60,12 +64,10 @@ function getNewStats() {
 			iterateData(bcd[data]);
 		}
 	}
-
-	stats_data[require(require.resolve('@mdn/browser-compat-data/package.json')).version] = stats;
 }
 
 getNewStats();
 
-fs.writeFile("./bcd-stats.json", JSON.stringify(stats_data, null, 2), function (err) {
+fs.writeFile("./bcd-stats.json", JSON.stringify(stats, null, 2), function (err) {
 	if (err) return console.log(err);
 });
