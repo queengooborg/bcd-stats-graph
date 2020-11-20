@@ -4,9 +4,7 @@
   "description": "Generate a graph of the real value statistics of mdn/browser-compat-data",
   "main": "index.js",
   "dependencies": {
-    "dotenv": "^8.0.0",
-    "@mdn/browser-compat-data": ">=2.0.0",
-    "plotly": "^1.0.6"
+    "@mdn/browser-compat-data": ">=2.0.0"
   },
   "devDependencies": {},
   "scripts": {

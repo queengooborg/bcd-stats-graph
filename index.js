@@ -1,8 +1,6 @@
 'use strict';
-require('dotenv').config();
 
 var fs = require('fs');
-var plotly = require('plotly')(process.env.PLOTLY_USERNAME, process.env.PLOTLY_APIKEY);
 const bcd = require('@mdn/browser-compat-data');
 
 const stats_data = require("./bcd-stats.json");
@@ -66,51 +64,7 @@ function getNewStats() {
 	stats_data[require(require.resolve('@mdn/browser-compat-data/package.json')).version] = stats;
 }
 
-function generateGraph(valueType) {
-	if (!['real', 'true', 'null'].includes(valueType)) {
-		console.log(`${valueType} is not a valid value type.  Must be "real", "true", or "null".`);
-		return false;
-	}
-
-	var data = {};
-	browsers.forEach(browser => {
-		data[browser] = {x: [], y: [], text: [], name: browser, type: "bar"};
-	});
-
-	for (let version in stats_data) {
-		for (let browser in stats_data[version]) {
-			if (browser !== 'all') {
-				data[browser]['x'].push(version);
-				data[browser]['y'].push(((stats_data[version][browser][valueType]/stats_data[version].all) * 100).toFixed(2));
-				data[browser]['text'].push(`${stats_data[version][browser][valueType]}/${stats_data[version].all} entries`);
-			}
-		};
-	};
-
-	var barData = [];
-	for (let browser in data) {
-		barData.push(data[browser]);
-	}
-
-	var graphLayout = {
-		title: `MDN BCD: ${valueType} values`,
-		xaxis: {title: "BCD Version"},
-		yaxis: {title: "% of Entries"},
-		barmode: "stack"
-	};
-
-	var graphOptions = {layout: graphLayout, filename: `mdn-bcd-${valueType}`, fileopt: "overwrite"};
-	plotly.plot(barData, graphOptions, function(err, msg) {
-		if (err) console.error(msg);
-		console.log(`${valueType}: ${msg.url}`);
-	});
-};
-
 getNewStats();
-
-generateGraph('real');
-generateGraph('true');
-generateGraph('null');
 
 fs.writeFile("./bcd-stats.json", JSON.stringify(stats_data, null, 2), function (err) {
 	if (err) return console.log(err);
