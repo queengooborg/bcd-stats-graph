@@ -7,10 +7,6 @@
     "@mdn/browser-compat-data": ">=2.0.0"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "update": "npm update && node index.js"
-  },
   "author": "Vinyl Darkscratch [https://www.queengoob.org]",
   "license": "CC0-1.0"
 }
