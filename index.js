@@ -68,6 +68,6 @@ const getNewStats = () => {
 
 getNewStats();
 
-fs.writeFile("./bcd-stats.json", JSON.stringify(stats, null, 2), function (err) {
+fs.writeFile("./bcd-stats.json", JSON.stringify(stats), function (err) {
 	if (err) return console.log(err);
 });
