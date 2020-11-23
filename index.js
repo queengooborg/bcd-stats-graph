@@ -65,24 +65,28 @@ const getStats = (bcd, browsers, folder) => {
 	return stats;
 }
 
-const main = () => {
-	const bcd = require('@mdn/browser-compat-data');
-	const bcdversion = require(require.resolve('@mdn/browser-compat-data/package.json')).version;
-	const stats = require("./bcd-stats.json");
-
-	const newStats = getStats(bcd, allbrowsers, '');
-
+const addStats = (stats, newStats, version) => {
 	for (const [key, data] of Object.entries(newStats)) {
 		if (key === 'all') {
-			stats.all[bcdversion] = data;
+			stats.all[version] = data;
 			continue;
 		}
 
-		stats[key].true[bcdversion] = data.true;
-		stats[key].null[bcdversion] = data.null;
-		stats[key].real[bcdversion] = data.real;
+		stats[key].true[version] = data.true;
+		stats[key].null[version] = data.null;
+		stats[key].real[version] = data.real;
 	}
 
+	return stats;
+}
+
+const main = () => {
+	const bcd = require('@mdn/browser-compat-data');
+	const bcdversion = require(require.resolve('@mdn/browser-compat-data/package.json')).version;
+	
+	const newStats = getStats(bcd, allbrowsers, '');
+	const stats = addStats(require("./bcd-stats.json"), newStats, bcdversion);
+	
 	fs.writeFile("./bcd-stats.json", JSON.stringify(stats), function (err) {
 		if (err) return console.log(err);
 	});
