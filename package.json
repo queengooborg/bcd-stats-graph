@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Generate a graph of the real value statistics of mdn/browser-compat-data",
   "main": "index.js",
+  "type": "module",
   "dependencies": {
-    "@mdn/browser-compat-data": ">=2.0.0"
+    "@mdn/browser-compat-data": ">=2.0.0",
+    "fs-extra": "^10.0.0"
   },
-  "devDependencies": {},
   "author": "Vinyl Darkscratch [https://www.queengoob.org]",
   "license": "CC0-1.0"
 }

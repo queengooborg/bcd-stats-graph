@@ -1,6 +1,8 @@
 'use strict';
 
-var fs = require('fs');
+import fs from 'fs-extra';
+
+import bcd from '@mdn/browser-compat-data';
 
 const allbrowsers = ['chrome', 'chrome_android', 'edge', 'firefox', 'ie', 'safari', 'safari_ios', 'webview_android'];
 
@@ -80,20 +82,18 @@ const addStats = (stats, newStats, version) => {
 	return stats;
 }
 
-const main = () => {
-	const bcd = require('@mdn/browser-compat-data');
-	const bcdversion = require(require.resolve('@mdn/browser-compat-data/package.json')).version;
+const main = async () => {
+	const bcdversion = JSON.parse(await fs.readFile("./node_modules/@mdn/browser-compat-data/package.json")).version;
 	
+	const oldStats = JSON.parse(await fs.readFile("./bcd-stats.json"));
 	const newStats = getStats(bcd, allbrowsers, '');
-	const stats = addStats(require("./bcd-stats.json"), newStats, bcdversion);
+	const stats = addStats(oldStats, newStats, bcdversion);
 	
-	fs.writeFile("./bcd-stats.json", JSON.stringify(stats), function (err) {
-		if (err) return console.log(err);
-	});
+	await fs.writeFile("./bcd-stats.json", JSON.stringify(stats));
 }
 
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
 	main();
 }
 
-module.exports = getStats;
+export default getStats;
