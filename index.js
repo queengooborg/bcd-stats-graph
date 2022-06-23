@@ -2,7 +2,7 @@
 
 import fs from 'fs-extra';
 
-import bcd from '@mdn/browser-compat-data';
+import bcd from '@mdn/browser-compat-data' assert {type: 'json'};
 
 const allbrowsers = ['chrome', 'chrome_android', 'edge', 'firefox', 'safari', 'safari_ios', 'webview_android'];
 
