@@ -45,11 +45,11 @@ const getStats = (bcd, browsers, folder) => {
 	};
 
 	const iterateData = (data) => {
-		for (let key in data) {
+		for (const [key, value] of Object.entries(data)) {
 			if (key === '__compat') {
-				processData(data[key]);
+				processData(value);
 			} else {
-				iterateData(data[key]);
+				iterateData(value);
 			}
 		}
 	};
@@ -58,7 +58,7 @@ const getStats = (bcd, browsers, folder) => {
 		iterateData(bcd[folder]);
 	} else {
 		for (let data in bcd) {
-			if (!(data === 'browsers' || data === 'webextensions')) {
+			if (!(data === 'browsers' || data === '__meta' || data === 'webextensions')) {
 				iterateData(bcd[data]);
 			}
 		}
@@ -83,7 +83,7 @@ const addStats = (stats, newStats, version) => {
 }
 
 const main = async () => {
-	const bcdversion = JSON.parse(await fs.readFile("./node_modules/@mdn/browser-compat-data/package.json")).version;
+	const bcdversion = bcd.__meta.version;
 	
 	const oldStats = JSON.parse(await fs.readFile("./bcd-stats.json"));
 	const newStats = getStats(bcd, allbrowsers, '');
