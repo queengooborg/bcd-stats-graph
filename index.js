@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 
 import bcd from '@mdn/browser-compat-data';
 
-const allbrowsers = ['chrome', 'chrome_android', 'edge', 'firefox', 'ie', 'safari', 'safari_ios', 'webview_android'];
+const allbrowsers = ['chrome', 'chrome_android', 'edge', 'firefox', 'safari', 'safari_ios', 'webview_android'];
 
 const getStats = (bcd, browsers, folder) => {
 	let stats = {all: 0};
